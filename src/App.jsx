@@ -8,7 +8,6 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white-500 text-white">
 
-
       <Header />
 
       <main className="flex-1 p-10">
@@ -16,7 +15,6 @@ export default function App() {
       </main>
 
       <Footer />
-
 
     </div>
   );
