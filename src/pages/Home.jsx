@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import Profil from "../components/Profil";  // pakai Profil (nama file kamu)
+import Profil from "../components/Profil";  
+import Skills from "../components/Skills";
+import Hobby from "../components/Hobby";
 
 export default function Home() {
   const [profile, setProfile] = useState(null);
@@ -15,7 +17,6 @@ export default function Home() {
   return (
     <div className="p-6 flex flex-col items-center gap-4">
 
-      {/* Tampilkan data ke komponen Profil */}
       <Profil
         name={profile.name}
         title={profile.title}
@@ -23,7 +24,14 @@ export default function Home() {
         age={profile.age}
         asal={profile.asal}
         phone={profile.Phone}
+        Picture={profile.Picture}
       />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto mt-6">
+        <Skills skills={profile.Skills} />
+        <Hobby hobbies={profile.Hobby} />
+      </div>
+
     </div>
   );
 }

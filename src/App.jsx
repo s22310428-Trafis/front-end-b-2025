@@ -6,7 +6,7 @@ import Profil from "./components/Profil";
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-white-500 text-white">
+    <div className="min-h-screen flex flex-col bg-gray-500 text-white">
 
       <Header />
 

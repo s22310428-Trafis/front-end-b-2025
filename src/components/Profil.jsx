@@ -1,41 +1,26 @@
-// Profile.jsx
-import { useEffect, useState } from "react";
-import { getProfileData } from "../RestAPI";
-
-export default function Profile() {
-  const [Profile, setProfile] = useState(null);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getProfileData();
-      if (!data) setError(true);
-      setProfile(data);
-    }
-    fetchData();
-  }, []);
-
-  if (error) return <p className="text-red-500 text-center">Gagal memuat data</p>;
-  if (!Profile) return <p className="text-center">Loading...</p>;
-
+export default function Profil({ name, title, bio, age, asal, phone, Picture }) {
   return (
-    <div className="p-5 max-w-md mx-auto bg-white shadow rounded">
-      <img
-        src={`/${Profile.Picture}`}
-        alt="Profile"
-        className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-      />
+    <div className="p-6 max-w-md mx-auto bg-white shadow-lg rounded-xl">
 
-      <h1 className="text-2xl font-bold text-center">{Profile.name}</h1>
-      <h2 className="text-lg text-gray-600 text-center">{Profile.title}</h2>
+      <div className="flex flex-col items-center">
+        <img
+          src={`/${Picture}`}
+          alt="Profile"
+          className="w-32 h-32 rounded-full object-cover mb-4 shadow"
+        />
 
-      <p className="mt-4 text-center text-gray-700">{Profile.bio}</p>
+        <h1 className="text-2xl font-bold text-gray-900">{name}</h1>
+        <h2 className="text-lg font-bold text-gray-700 mt-1">{title}</h2>
+      </div>
 
-      <div className="mt-4 text-gray-700 space-y-1 text-center">
-        <p>Umur: {Profile.age}</p>
-        <p>Asal: {Profile.asal}</p>
-        <p>Telepon: {Profile.Phone}</p>
-        <p>Nama: {Profile.name}</p>
+      <div className="h-px bg-gray-300 my-4"></div>
+
+      <p className="text-center text-gray-700 mb-4">{bio}</p>
+
+      <div className="text-gray-700 space-y-1 text-center">
+        <p><strong>Umur:</strong> {age}</p>
+        <p><strong>Asal:</strong> {asal}</p>
+        <p><strong>Telepon:</strong> {phone}</p>
       </div>
     </div>
   );
