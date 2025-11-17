@@ -1,19 +1,17 @@
 export default function Hobby({ hobbies }) {
   return (
-    <div className="p-6 bg-white shadow-lg rounded-xl max-w-md w-full">
+    <div className="bg-white text-black rounded-xl p-8 shadow-lg w-full">
       
-      <h2 className="text-2xl font-bold text-center text-black mb-4">
-        Hobby
-      </h2>
+      <h2 className="text-2xl font-bold mb-4 text-left">Hobby</h2>
 
-      <div className="flex flex-wrap justify-center gap-3">
-        {hobbies.map((item, index) => (
-          <span
+      <div className="text-left space-y-2 w-full">
+        {hobbies.map((hobby, index) => (
+          <p
             key={index}
-            className="px-3 py-1 bg-gray-100 text-gray-900 rounded-full shadow-sm"
+            className="text-base font-medium break-words"
           >
-            {item}
-          </span>
+            • {hobby}
+          </p>
         ))}
       </div>
     </div>

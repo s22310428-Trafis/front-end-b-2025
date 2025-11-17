@@ -1,21 +1,17 @@
 export default function Skills({ skills }) {
   return (
-    <div className="p-6 bg-white shadow-lg rounded-xl max-w-md w-full">
+    <div className="bg-white text-black rounded-xl p-8 shadow-lg w-full">
+     
+      <h2 className="text-2xl font-bold mb-4 text-left">Skills</h2>
       
-      {/* Judul */}
-      <h2 className="text-2xl font-bold text-center text-black mb-4">
-        Skills
-      </h2>
-
-      {/* Grid Skills */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="text-left space-y-2 w-full">
         {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="border border-gray-300 p-3 rounded-lg text-center font-semibold text-black bg-gray-50 hover:bg-gray-100 transition"
+          <p 
+            key={index} 
+            className="text-base font-medium break-words"
           >
-            {skill}
-          </div>
+            • {skill}
+          </p>
         ))}
       </div>
     </div>

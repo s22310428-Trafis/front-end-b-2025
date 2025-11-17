@@ -24,7 +24,7 @@ export default function Home() {
         age={profile.age}
         asal={profile.asal}
         phone={profile.Phone}
-        Picture={profile.Picture}
+        Picture={profile.Picture} 
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto mt-6">
